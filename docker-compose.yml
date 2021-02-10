@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  servico-php:
+    image: php
+    volumes:
+      - ./:/lerningAjax
+    working_dir: /lerningAjax
+    command:
+      - php
+      - -S
+      - 0.0.0.0:80
+    ports:
+      - 8033:80
+
+      
