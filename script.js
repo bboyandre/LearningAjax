@@ -57,3 +57,9 @@ function loadDoc() {
     xhttp.open("GET", "qxhr.php", true);
     xhttp.send();
   }
+
+function loadWithJquery() {
+  $.get("/qxhr.php", function (data, status) {
+    document.getElementById("demo").innerHTML = data;
+  });
+}

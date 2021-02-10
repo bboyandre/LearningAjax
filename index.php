@@ -16,14 +16,24 @@
 
 <!DOCTYPE html>
 <html>
+<head>
+  <script src="/jquery-3.5.1.min.js"></script>
+</head>
 <body>
 
-<div id="demo" onclick="loadDoc()">
+<div id="demo">
   <h2>Let AJAX change this text</h2>
-  <button >Change Content</button>
+  <button id="change-content-button">Change Content</button>
 </div>
 
 <script src="script.js"></script>
+<script>
+  $('#change-content-button').on('click', function () {
+    $.get("/qxhr.php", function (data, status) {
+      document.getElementById("demo").innerHTML = data;
+    });
+  })
+</script>
 
 </body>
 </html> 
